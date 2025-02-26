@@ -9,7 +9,7 @@ function App() {
       <Routes>
         {/* USER LAYOUT */}
         <Route path="/" element={<UserLayout />}>
-          <Route index element={<HomePage/>}/>
+          <Route index element={<HomePage />} />
         </Route>
         {/* ADMIN LAYOUT */}
         <Route></Route>
@@ -19,4 +19,4 @@ function App() {
 }
 
 export default App;
-//todo: 01:15:14
+//todo: 02:17:00 ⏰
