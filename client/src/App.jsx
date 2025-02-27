@@ -6,7 +6,8 @@ import { Toaster } from "sonner";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter
+      future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <Toaster position="top-right" />
       <Routes>
         {/* USER LAYOUT */}
@@ -21,4 +22,4 @@ function App() {
 }
 
 export default App;
-//todo: 02:17:00 ⏰
+//todo: 03:01:00 ⏰
