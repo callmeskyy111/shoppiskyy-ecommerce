@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import UserLayout from "./components/Layout/UserLayout";
 import HomePage from "./pages/HomePage";
 import { Toaster } from "sonner";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         {/* USER LAYOUT */}
         <Route path="/" element={<UserLayout />}>
           <Route index element={<HomePage />} />
+          <Route path="login" element={<LoginPage/>}/>
         </Route>
         {/* ADMIN LAYOUT */}
         <Route></Route>
@@ -22,4 +24,4 @@ function App() {
 }
 
 export default App;
-//todo: 03:01:00 ⏰
+
