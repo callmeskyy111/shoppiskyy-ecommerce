@@ -13,7 +13,7 @@ function GenderCollection() {
   return (
     <section className="py-16 px-4 lg:px-0">
       <div className="container mx-auto flex flex-col md:flex-row gap-8">
-        {/* WOMEN'S COLLECTION */}
+        {/* WOMEN'S-COLLECTION */}
         <div className="relative flex-1 overflow-hidden">
           <motion.img
             whileHover={{ scale: 1.1 }} // Adjust the scale value as needed
@@ -37,7 +37,7 @@ function GenderCollection() {
             </Link>
           </div>
         </div>
-        {/* MEN'S COLLECTION */}
+        {/* MEN'S-COLLECTION */}
         <div className="relative flex-1 overflow-hidden">
           <motion.img
             whileHover={{ scale: 1.1 }} // Adjust the scale value as needed
