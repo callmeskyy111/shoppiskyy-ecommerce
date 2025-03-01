@@ -103,7 +103,7 @@ function NavBar() {
                 to="#"
                 onClick={toggleNavDrawer}
                 className="block text-gray-600 hover:text-black">
-                Yop Wear
+                Top Wear
               </Link>
               <Link
                 to="#"

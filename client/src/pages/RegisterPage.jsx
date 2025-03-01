@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import LoginImg from "../assets/login.webp";
+import registerImg from "../assets/register.webp";
 
-function LoginPage() {
+function RegisterPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
 
   async function handleSubmit(evt) {
     evt.preventDefault();
     console.log(
-      "User Logged in ✅🔏",
-      `email : ${email}, password : ${password}`
+      `User registered successfully ✅.. email:${email}, password:${password}, name:${name}`
     );
     setEmail("");
     setPassword("");
+    setName("");
   }
 
   return (
@@ -27,12 +28,25 @@ function LoginPage() {
           transition={{ duration: 1.0 }}
           className="w-full max-w-md bg-white p-8 rounded-lg border shadow-sm">
           <div className="flex justify-center mb-6">
-            <h2 className="text-xl font-medium">ShoppiSkyy 🛒</h2>
+            <h2 className="text-xl font-medium">ShoppiSkyy🛒</h2>
           </div>
           <h2 className="text-2xl font-bold text-center mb-6">Hey there! 👋🏻</h2>
           <p className="text-center mb-6">
-            Enter your email and password to login
+            Enter username, emial and password to register
           </p>
+          <div className="mb-4">
+            <label className="block text-sm font-semibold mb-2">Username</label>
+            <motion.input
+              whileFocus={{ scale: 1.05, borderColor: "#000" }}
+              transition={{ duration: 0.3 }}
+              type="text"
+              value={name}
+              onChange={(evt) => setName(evt.target.value)}
+              className="w-full p-2 border rounded"
+              placeholder="Enter username/name.."
+            />
+          </div>
+
           <div className="mb-4">
             <label className="block text-sm font-semibold mb-2">Email</label>
             <motion.input
@@ -60,12 +74,12 @@ function LoginPage() {
           <button
             type="submit"
             className="w-full bg-black text-white p-2 rounded-lg font-semibold hover:bg-gray-800 transition hover:cursor-pointer">
-            Sign In 🔏
+            Sign Up ✅
           </button>
           <p className="mt-6 text-center text-sm">
-            Don't have an account?{" "}
-            <Link to="/register" className="text-blue-500 hover:underline">
-              Register
+            Already have an account?{" "}
+            <Link to="/login" className="text-blue-500 hover:underline">
+              Sign In
             </Link>
           </p>
         </motion.form>
@@ -75,7 +89,7 @@ function LoginPage() {
           <motion.img
             whileHover={{ scale: 1.05 }} // Adjust the scale value as needed
             transition={{ duration: 0.5 }} // Adjust the duration as needed
-            src={LoginImg}
+            src={registerImg}
             alt="Login-Image"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -88,4 +102,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default RegisterPage;

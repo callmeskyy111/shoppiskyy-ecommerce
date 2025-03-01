@@ -11,10 +11,16 @@ const TopBar = () => {
           <a href="#" className="hover:text-gray-300">
             <TbBrandMeta className="h-5 w-5" />
           </a>
-          <a href="#" className="hover:text-gray-300">
+          <a
+            href="https://www.instagram.com/skyybbanerjee"
+            target="_blank"
+            className="hover:text-gray-300">
             <IoLogoInstagram className="h-5 w-5" />
           </a>
-          <a href="#" className="hover:text-gray-300">
+          <a
+            href="https://x.com/skyybbanerjee"
+            target="_blank"
+            className="hover:text-gray-300">
             <RiTwitterXLine className="h-4 w-4" />
           </a>
         </div>

@@ -99,7 +99,7 @@ function Footer() {
               <IoLogoInstagram className="h-5 w-5" />{" "}
             </a>
             <a
-              href="https://x.com/"
+              href="https://x.com/skyybbanerjee"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-gray-500">
@@ -116,7 +116,12 @@ function Footer() {
       <div className="container mx-auto mt-12 px-4 lg:px-0 border-t border-gray-200 pt-6">
         <p className="text-gray-500 text-sm tracking-tighter text-center">
           ©️ 2025, ShoppiSkyy🛒 - By{" "}
-          <a href="https://github.com/skyybbanerjee" target="_blank" className="text-blue-700 underline">Soumadip 'Skyy' Banerjee</a>
+          <a
+            href="https://github.com/skyybbanerjee"
+            target="_blank"
+            className="text-blue-700 underline">
+            Soumadip 'Skyy' Banerjee
+          </a>
           👨🏻‍💻 | All Rights Reserved
         </p>
       </div>
