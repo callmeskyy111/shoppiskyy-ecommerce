@@ -9,7 +9,7 @@ function ProductGrid({ products }) {
           <div className="bg-white p-4 rounded-lg">
             <div className="w-full h-96 mb-4">
               <img
-                className="h-full h-full object-cover rounded"
+                className="h-full object-cover rounded"
                 src={product.images[0].url}
                 alt={product.images[0].altText || product.name}
               />

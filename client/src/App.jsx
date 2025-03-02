@@ -6,6 +6,7 @@ import { Toaster } from "sonner";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import ProfilePage from "./pages/ProfilePage";
+import CollectionsPage from "./pages/CollectionsPage";
 
 function App() {
   return (
@@ -16,9 +17,10 @@ function App() {
         {/* USER LAYOUT */}
         <Route path="/" element={<UserLayout />}>
           <Route index element={<HomePage />} />
-          <Route path="login" element={<LoginPage/>}/>
-          <Route path="register" element={<RegisterPage/>}/>
-          <Route path="profile" element={<ProfilePage/>}/>
+          <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
+          <Route path="profile" element={<ProfilePage />} />
+          <Route path="collections/:collection" element={<CollectionsPage />} />
         </Route>
         {/* ADMIN LAYOUT */}
         <Route></Route>
@@ -29,4 +31,4 @@ function App() {
 
 export default App;
 
-//todo: 03:31:00 ⏰
+//todo: 04:34:00 ⏰
