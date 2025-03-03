@@ -115,7 +115,6 @@ function FilterSideBar() {
   return (
     <div className="p-4">
       <h3 className="text-xl font-medium text-gray-800 mb-4">Filter</h3>
-
       {/* Category Filter */}
       <div className="mb-6">
         <label className="block text-gray-600 font-medium mb-2">Category</label>
@@ -184,6 +183,42 @@ function FilterSideBar() {
               className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
             />
             <span className="text-gray-700">{size}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Material Filter */}
+      <div className="mb-6">
+        <label className="block text-gray-600 font-medium mb-2">Material</label>
+        {materials.map((material) => (
+          <div key={material} className="flex items-center mb-1">
+            <input
+              value={material}
+              onChange={handleFilterChange}
+              checked={filters.material.includes(material)}
+              type="checkbox"
+              name="material"
+              className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
+            />
+            <span className="text-gray-700">{material}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Brand Filter */}
+      <div className="mb-6">
+        <label className="block text-gray-600 font-medium mb-2">Material</label>
+        {brands.map((brand) => (
+          <div key={brand} className="flex items-center mb-1">
+            <input
+              value={brand}
+              onChange={handleFilterChange}
+              checked={filters.brand.includes(brand)}
+              type="checkbox"
+              name="brand"
+              className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
+            />
+            <span className="text-gray-700">{brand}</span>
           </div>
         ))}
       </div>

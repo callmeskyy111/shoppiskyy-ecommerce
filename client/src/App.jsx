@@ -7,6 +7,12 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import ProfilePage from "./pages/ProfilePage";
 import CollectionsPage from "./pages/CollectionsPage";
+import ProductDetails from "./components/Products/ProductDetails";
+import Checkout from "./components/Cart/Checkout";
+import OrderConfirmationPage from "./pages/OrderConfirmationPage";
+import OrderDetailsPage from "./pages/OrderDetailsPage";
+import MyOrdersPage from "./pages/MyOrdersPage";
+import AdminLayout from "./components/Admin/AdminLayout";
 
 function App() {
   return (
@@ -21,9 +27,18 @@ function App() {
           <Route path="register" element={<RegisterPage />} />
           <Route path="profile" element={<ProfilePage />} />
           <Route path="collections/:collection" element={<CollectionsPage />} />
+          <Route path="product/:id" element={<ProductDetails />} />
+          <Route path="checkout" element={<Checkout />} />
+          <Route
+            path="order-confirmation"
+            element={<OrderConfirmationPage />}
+          />
+          <Route path="order/:id" element={<OrderDetailsPage />} />
+          <Route path="my-orders" element={<MyOrdersPage />} />
         </Route>
         {/* ADMIN LAYOUT */}
-        <Route></Route>
+        <Route path="/admin" element={<AdminLayout/>}>
+        </Route>
       </Routes>
     </BrowserRouter>
   );
@@ -31,4 +46,4 @@ function App() {
 
 export default App;
 
-//todo: 04:34:00 ⏰
+//todo: 06:00:00 ⏰
