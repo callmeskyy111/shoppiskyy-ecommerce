@@ -102,6 +102,6 @@ export async function loginUser(req, res) {
 }
 
 export async function getLoggedInUserProfile(req,res) {
-  //protected
+  //protected route
   res.json(req.user);
 }
