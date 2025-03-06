@@ -48,3 +48,60 @@ export async function registerUser(req, res) {
     });
   }
 }
+
+export async function loginUser(req, res) {
+  const { email, password } = req.body;
+
+  try {
+    // Check if user exists
+    const user = await userModel.findOne({ email });
+    if (!user) {
+      return res.status(401).json({
+        success: false,
+        message: "Invalid credentials. 🔴",
+      });
+    }
+
+    // Check if the password is correct (Ensure matchPassword is implemented in the model)
+    const isMatch = await user.matchPassword(password);
+    if (!isMatch) {
+      return res.status(401).json({
+        success: false,
+        message: "Invalid password! 🔴",
+      });
+    }
+
+    // Generate JWT Token
+    const payload = {
+      user: { id: user._id, name: user.name, email: user.email },
+    };
+
+    const token = jwt.sign(payload, process.env.JWT_SECRET, {
+      expiresIn: "5h",
+    });
+
+    // Send response with token and user info (excluding password)
+    return res.json({
+      success: true,
+      message: "User successfully logged in. ✅",
+      user: {
+        id: user._id,
+        name: user.name,
+        email: user.email,
+        role: user.role,
+      },
+      token: token,
+    });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({
+      success: false,
+      message: err.message + " 🔴",
+    });
+  }
+}
+
+export async function getLoggedInUserProfile(req,res) {
+  //protected
+  res.json(req.user);
+}
