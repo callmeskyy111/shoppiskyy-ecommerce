@@ -19,13 +19,12 @@ async function protectRoute(req, res, next) {
         .json({ success: false, message: err.message + "🔴" });
     }
   } else {
-    return res
-      .status(401)
-      .json({
-        success: false,
-        message: "No token provided, authorization denied 🔴",
-      });
+    return res.status(401).json({
+      success: false,
+      message: "No token provided, authorization denied 🔴",
+    });
   }
 }
+
 
 export default protectRoute;

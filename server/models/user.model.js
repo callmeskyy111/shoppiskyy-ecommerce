@@ -46,25 +46,3 @@ UserSchema.methods.matchPassword = async function (enteredPassword) {
 // Export the User model
 const userModel = mongoose.models.User || mongoose.model("User", UserSchema);
 export default userModel;
-
-//! NOTES:
-// pre: Defines a pre hook for the model.
-// save: Indicates that the current operation is a save operation.
-// bcrypt.genSalt: Creates a salt for hashing.
-// next: Calls the next middleware function in the chain
-// bcrypt.hash: Hashes the password using the generated salt.
-// matchPassword: Compares the entered password with the hashed password.
-// userModel: Returns the User model if it already exists, otherwise creates a new one.
-// mongoose.models: Returns the existing model if it exists, otherwise creates a new one.
-// mongoose.model: Creates or retrieves a model with the given name.
-// UserSchema: Defines the schema for the User model.
-// timestamps: Adds createdAt and updatedAt fields to the model.
-// trim: Removes leading and trailing whitespace from the name and email fields.
-// unique: Ensures that the email field is unique.
-// lowercase: Converts the email field to lowercase.
-// match: Validates the email field using a regular expression.
-// bcrypt.compare: Compares the entered password with the hashed password.
-// User: The exported User model.
-// userModel: The User model if it already exists, otherwise creates a new one.
-// methods: Object of currently defined methods on this schema.
-// compare: Asynchronously tests a password against a hash.

@@ -1,12 +1,13 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "BACKEND/SERVER of ShoppiSkyy E-Commerce App",
+  "description": "SERVER of ShoppiSkyy E-Commerce App",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "seed": "node seeder.js"
   },
   "author": "Soumadip Banerjee",
   "license": "ISC",
